@@ -47,7 +47,7 @@ def music(update: Update, context: CallbackContext):
     matchObject = re.match(pattern,music_title)
     performer = yt.author or "Unknown Author"
     if matchObject is not None:
-        performer =  matchObject.group(1)
+        performer =  matchObject.group(1).rstrip()
         music_title = matchObject.group(2).strip() or music_title
     context.bot.send_audio(chat_id=update.effective_chat.id, audio=open(music, 'rb'),
                         performer=performer,title=music_title)
