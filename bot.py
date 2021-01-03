@@ -11,7 +11,8 @@ from telegram.bot import Bot
 from telegram.parsemode import ParseMode
 from downloader import Downloader
 
-API_TOKEN = os.environ['TELEGRAM_TOKEN']
+# API_TOKEN = os.environ['TELEGRAM_TOKEN']
+API_TOKEN = "1402810406:AAEPmymWoRbu2cdofGtMnpetekRpV-oz-n8"
 
 updater = Updater(API_TOKEN,use_context=True)
 
@@ -36,7 +37,8 @@ def music(update: Update, context: CallbackContext):
         context.bot.send_audio(chat_id=update.effective_chat.id,
                                 audio=open(dl.song, 'rb'),
                                 performer=dl.author,
-                                title=dl.title)
+                                title=dl.title,
+                                caption="@invisiblemusicbot")
     except Exception as e:
         context.bot.send_message(
                     chat_id=update.effective_chat.id,
@@ -53,7 +55,8 @@ def send_msg(update: Update, context: CallbackContext):
         context.bot.send_audio(chat_id=update.effective_chat.id,
                                 audio=open(dl.song, 'rb'),
                                 performer=dl.author,
-                                title=dl.title)
+                                title=dl.title,
+                                caption="@invisiblemusicbot")
     except Exception as e:
         context.bot.send_message(
                     chat_id=update.effective_chat.id,
