@@ -11,8 +11,7 @@ from telegram.bot import Bot
 from telegram.parsemode import ParseMode
 from downloader import Downloader
 
-# API_TOKEN = os.environ['TELEGRAM_TOKEN']
-API_TOKEN = "1402810406:AAEPmymWoRbu2cdofGtMnpetekRpV-oz-n8"
+API_TOKEN = os.environ['TELEGRAM_TOKEN']
 
 updater = Updater(API_TOKEN,use_context=True)
 
